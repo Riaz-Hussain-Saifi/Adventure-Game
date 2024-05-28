@@ -6,7 +6,13 @@ import chalk from "chalk";
 // Welcome message
 const developer = "Saifi Developer's";
 const project = "Adventure Game";
-console.log(chalk.magentaBright(`\n \t\tWelcome to the ${chalk.yellowBright(developer)} ${chalk.greenBright(project)}\n`));
+console.log(
+  chalk.magentaBright(
+    `\n \t\tWelcome to the ${chalk.yellowBright(developer)} ${chalk.greenBright(
+      project
+    )}\n`
+  )
+);
 
 async function startGame() {
   // Prompt to get the user's name
@@ -24,7 +30,13 @@ async function startGame() {
   const inputname = user.userName;
 
   // Welcome the user to the game
-  console.log(chalk.greenBright(`\n\t\t Dear ${chalk.yellow(inputname)}, Welcome to the ${chalk.blueBright(project)}\n`));
+  console.log(
+    chalk.greenBright(
+      `\n\t\t Dear ${chalk.yellow(
+        inputname
+      )}, Welcome to the ${chalk.blueBright(project)}\n`
+    )
+  );
 
   async function fightGame(opponent: string) {
     // Announce the battle
@@ -81,7 +93,9 @@ async function startGame() {
         userHealth -= 10; // Decrease user's health by 10
         console.log(
           chalk.redBright(
-            `\n${chalk.blue(opponent)} attacks ${chalk.green(inputname)}. ${chalk.green(inputname)} loses 10 health.\n`
+            `\n${chalk.blue(opponent)} attacks ${chalk.green(
+              inputname
+            )}. ${chalk.green(inputname)} loses 10 health.\n`
           )
         );
       } else if (opponentAction === "Run") {
@@ -99,8 +113,9 @@ async function startGame() {
       if (userHealth <= 0) {
         console.log(
           chalk.redBright(
-            `\n Dear ${chalk.blueBright(
-              inputname )}, you are loss the game!\n`));
+            `\n Dear ${chalk.blueBright(inputname)}, you are loss the game!\n`
+          )
+        );
         break;
       }
 
@@ -125,7 +140,11 @@ async function startGame() {
       startGame();
     } else {
       console.log(
-        chalk.magentaBright(`\n\tThank you for playing the ${chalk.greenBright(developer)} ${chalk.cyanBright(project)}!\n`)
+        chalk.magentaBright(
+          `\n\tThank you for playing the ${chalk.greenBright(
+            developer
+          )} ${chalk.cyanBright(project)}!\n`
+        )
       );
     }
   }
